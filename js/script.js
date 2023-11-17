@@ -7,32 +7,32 @@ $(function() {
 
   $(window).resize(function() {
     // Parallax fix
-    var $sectionHeader = $('.section-header');
-    var bgSize = Math.max($sectionHeader.outerWidth(), $sectionHeader.outerHeight()) +'px';
+    var $sectionHead = $('#section-head');
+    var bgSize = Math.max($sectionHead.outerWidth(), $sectionHead.outerHeight()) +'px';
     bgSize = bgSize  +', '+ bgSize;
-    $sectionHeader.css('background-size', bgSize);
+    $sectionHead.css('background-size', bgSize);
   });
 
   $(window).resize();
 
 
   // Parallax
-  $('.section-header, .section-just-call, .section-request-call').each(function() {
+  $('#section-head, #section-just-call, #section-request-call').each(function() {
     $(this).parallax('50%', 0.3, true);
   });
 
 
   // fotorama
-  // $('.section-photo').click(function() {
-  //   $.scrollTo($('.section-photo'), {axis:'y', duration:300});
+  // $('#section-photo').click(function() {
+  //   $.scrollTo($('#section-photo'), {axis:'y', duration:300});
   // });
 
   // fotorama
-  $('.section-photo .fotorama').on(
+  $('#section-photo .fotorama').on(
     'fotorama:show',
     function (e, fotorama, extra) {
       if (extra.user) {
-        $.scrollTo($('.section-photo'), {axis:'y', duration:300});
+        $.scrollTo($('#section-photo'), {axis:'y', duration:300});
       }
     }
   );
@@ -52,6 +52,15 @@ $(function() {
       );
     },
     'json');
+  });
+
+
+  $('header menu a').click(function(event) {
+    event.preventDefault();
+
+    var hash = this.hash;
+    history.pushState(null, null, hash);
+    $.scrollTo($(hash), {axis:'y', duration:1000});
   });
 
 });
