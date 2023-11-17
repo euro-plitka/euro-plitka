@@ -67,9 +67,10 @@ video {
 body {
     background: #fff;
     color: #364c63;
-    font-family: "Lato", sans-serif;
+    font-family: sans-serif;
     font-size: 16px;
     line-height: 1.5;
+    letter-spacing: 0.03em;
 }
 
 
@@ -79,7 +80,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   font-weight: normal;
   /* color: #2c3e50; */
 }
@@ -92,6 +93,10 @@ h4{font-size:20px}
 h5{font-size:18px}
 h6{font-size:16px}
 
+@media (max-width: 375px) {
+  h1{font-size:32px}
+}
+
 
 
 
@@ -103,6 +108,41 @@ h6{font-size:16px}
 }
 @media (min-width: 421px) {
 .lte-420 {display: none;}
+}
+
+
+
+
+header {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+header menu {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: url(../img/logo.png) 0% 50% no-repeat;
+  background-size: contain;
+}
+
+header menu a,
+header menu a:visited {
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  header {display: none;}
 }
 
 
@@ -137,7 +177,7 @@ body > section > div {
   width: 100%; /* for overflow */
 }
 
-.section-h {
+.section-header {
     text-align: center;
     margin-bottom: 64px;
 }
@@ -177,13 +217,14 @@ a:active {
     border-radius: 6px;
     transition: border-color .25s linear, color .25s linear, background-color .25s linear;
     font-size: 14px;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: sans-serif;
     font-weight: bold;
     white-space: nowrap;
     height: 44px;
     line-height: 44px;
     padding: 0 26px;
     min-width: auto;
+    letter-spacing: inherit;
 }
 
 .btn:hover, .btn:focus {
@@ -238,7 +279,7 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
     background-color: #ffffff;
     border: 2px solid #bdc3c7;
     color: #34495e;
-    font-family: "Lato", sans-serif;
+    font-family: sans-serif;
     font-size: 14px;
     padding: 0 8px;
     height: 44px;
@@ -248,6 +289,7 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
     box-shadow: none;
     transition: border-color .25s linear, color .25s linear, background-color .25s linear;
     min-width: 0; /* grid */
+    letter-spacing: inherit;
 }
 
 textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus {
@@ -364,13 +406,13 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 
 
 
-.section-header {
-    background: #2c3e50 url(../img/bg/63256847.jpg) 50% 50% no-repeat fixed;
+#section-head {
+    background: #2c3e50 url(../img/bg/654984.jpg) 50% 50% no-repeat fixed;
     background-size: cover;
     min-height: 100vh;
 }
 
-.section-header h1 {
+#section-head h1 {
     color: #fff;
     white-space: nowrap;
     /* text-shadow: #2c3e50 4px 4px 4px, #2c3e50 -4px 4px 4px, #2c3e50 4px -4px 4px, #2c3e50 -4px -4px 4px; */
@@ -428,7 +470,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 
 
 
-.section-why-us {
+#section-why-us {
     background: #ebedee;
     border: 10px solid #95a5a6;
     border-left: 0;
@@ -616,8 +658,8 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 
 
 
-.section-just-call {
-    background: #ebedee url(../img/bg/5173fa18.jpg) 50% 50% no-repeat fixed;
+#section-just-call {
+    background: #ebedee url(../img/bg/6546498.jpg) 50% 50% no-repeat fixed;
     background-size: cover;
     min-height: 100vh;
     border: 10px solid #95a5a6;
@@ -627,18 +669,18 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
     text-align: center;
 }
 
-.section-just-call h2 {
+#section-just-call h2 {
     margin-bottom: 24px;
 }
 
 @media (max-width: 420px) {
-.section-just-call .btn.btn-large {
+#section-just-call .btn.btn-large {
     font-size: 26px;
 }
 }
 
 @media (max-width: 350px) {
-.section-just-call .btn.btn-large {
+#section-just-call .btn.btn-large {
     font-size: 22px;
 }
 }
@@ -646,8 +688,8 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 
 
 
-.section-request-call {
-    background: #ebedee url(../img/bg/62457183.jpg) 50% 50% no-repeat fixed;
+#section-request-call {
+    background: #ebedee url(../img/bg/5446511.jpg) 50% 50% no-repeat fixed;
     background-size: cover;
     min-height: 100vh;
     border: 10px solid #95a5a6;
@@ -657,27 +699,27 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
     text-align: center;
 }
 
-.section-request-call h2 {
+#section-request-call h2 {
     margin-bottom: 24px;
 }
 
-.section-request-call .request-form {
+#section-request-call .request-form {
     background: none;
     padding: 0;
     max-width: 400px;
 }
 
-.section-request-call .form-controls {
+#section-request-call .form-controls {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.section-request-call .request-form .btn {
+#section-request-call .request-form .btn {
     grid-column-start: 1;
     grid-column-end: 3;
 }
 
 @media (max-width: 512px) {
-.section-request-call .request-form .btn {
+#section-request-call .request-form .btn {
     grid-column-end: auto;
 }
 }
@@ -686,19 +728,19 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 
 
 /*
-.section-contacts {
+#section-contacts {
     background: #2c3e50;
     background-size: cover;
     color: #fff;
 }
 */
 
-.section-contacts {
+#section-contacts {
     background: #ebedee;
     min-height: 100vh;
 }
 
-.section-contacts .section-h {
+#section-contacts .section-header {
     color: #e74c3c;
 }
 
@@ -774,19 +816,19 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 
 
 
-.section-photo {
+#section-photo {
     padding: 0;
     min-height: 0;
     background: #1b1f23;
 }
 
-.section-video {
+#section-video {
     display: block;
     padding: 0;
     background: #000;
 }
 
-.section-video video {
+#section-video video {
     width: 100%;
     height: 100vh;
 }
@@ -794,7 +836,105 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 
 
 
-.section-status {
+#section-status {
     text-align: center;
     font-size: 28px;
+}
+
+
+
+
+#section-reviews {
+    border: 10px solid #95a5a6;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+}
+
+
+.reviews {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 48px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.review {
+    flex-shrink: 0;
+    position: relative;
+    padding: 16px;
+    border: 2px solid #bdc3c7;
+    border-radius: 12px;
+    width: 300px;
+    width: calc(50% - 24px);
+}
+
+.review-icon {
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.review-icon > img {
+    width: 48px;
+    height: auto;
+    display: block;
+    opacity: 0.8;
+}
+
+.review-name {
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 64px; */
+    /* line-height: 48px; */
+    color: #e74c3c;
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.review-content {
+    margin-top: 16px;
+}
+
+
+.reviews::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.reviews::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+
+.reviews::-webkit-scrollbar,
+.reviews::-webkit-scrollbar-track,
+.reviews::-webkit-scrollbar-button,
+.reviews::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.reviews::-webkit-scrollbar-thumb {
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: inset 0 0 5px rgba(0,0,0,.2), inset -2px -2px 5px rgba(0,0,0,.1);
+}
+
+.reviews::-webkit-scrollbar-thumb:hover {
+  background: #eee;
+}
+
+
+@media (max-width: 560px) {
+.review {
+    width: 100%;
+}
 }
